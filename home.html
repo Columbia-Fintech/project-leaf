@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .header{
+        padding: 0%; 
+        margin: 0%; 
+        /* background-color:powderblue; */
+    }
+    body, head{
+        background-color:white;
+    }
+    .xbutton{
+        border: none;
+        background-color: white;
+    }
+    .modal{
+        width: 100%;
+        height: 95%;
+    }
+    #mod{
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+    table{
+    	border: 2px;
+        border-style: double;
+        width: 100%;
+    }
+    th, td {
+        border: 1px;
+        border-style: double;
+    }
+</style>
+<head>
+    <title>Project Leaf</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type = "text/javascript" src = "ui.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div>
+            <h1>Project Leaf</h1>
+            <p></p> 
+            <form name="form" id="form" action = "/getfoodinfo" method="post"> 
+                <!-- Food Name will handle Brand Name search as well -->
+                <label for="name" >Food Name:&nbsp;</label>
+                <input type="text" id="name" name="name" placeholder="e.g. Oatly">
+    
+                <!-- <label for="brand" >Brand Name:&nbsp;</label>
+                <input type="text" id="brand" name="brand" placeholder="Brand Name"> -->
+    
+                <label for="ingd" >Ingredients:&nbsp;</label>
+                <input type="text" id="ingd" name="ingd" placeholder="e.g. water">
+
+                <label>Categories:&nbsp;</label>
+                <select name="cat" id="cat">
+                    <option value=''></option>
+                    <option value='baking'>Baking</option>
+                    <option value='beverage'>Beverage</option>
+                    <option value='bread'>Bread</option>
+                    <option value='breakfast'>Breakfast</option>
+                    <option value='butter'>Butter</option>
+                    <option value='cereal'>Cereal</option>
+                    <option value='cheese'>Cheese</option>
+                    <option value='chicken'>Chicken</option>
+                    <option value='dairy'>Dairy</option>
+                    <option value='dessert'>Desserts</option>
+                    <option value='fish'>Fish</option>
+                    <option value='fruit'>Fruit</option>
+                    <option value='frozen'>Frozen</option>
+                    <option value='grains'>Grains</option>
+                    <option value='meat'>Meat</option>
+                    <option value='milk'>Milk</option>
+                    <option value='noodles'>Noodles/Pasta</option>
+                    <option value='nuts and seeds'>Nuts and Seeds</option>
+                    <option value='oil'>Oil</option>
+                    <option value='pastries'>Pastries</option>
+                    <option value='pork'>Pork</option>
+                    <option value='shellfish'>Shellfish</option>
+                    <option value='snack'>Snacks</option>
+                    <option value='soup'>Soup</option>
+                    <option value='sugar'>Sugar</option>
+                    <option value='supplements'>Supplements</option>
+                    <option value='veg'>Vegetables</option>
+                    <option value='vit'>Vitamins</option>
+                    <option value='yogurt'>Yogurt</option>
+                </select>
+
+                <br><br>
+                <div class="additional"></div>
+                <input type="submit" id="submit" value="Submit">
+                <button type="button" onclick="reset(); location.reload();">Reset</button>
+                <br>
+                <br>
+            </form>
+            <button id="add">Additional Filters</button>
+            
+        </div>
+        <div id = "rep">
+            <br>
+            <table id = "top10">
+                <tr id="rowh">
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="modal">
+        <center>
+            <div id = "mod">
+                <button id = "exit" onclick="exitModal();" style="float: right;">X</button>
+                <h3></h3><br>
+                <table id="t-mod">
+                    <tr id="rowh2">
+                    </tr>
+                </table>
+            </div>
+        </center>
+    </div>
+</body>
+</html>
